@@ -12,12 +12,12 @@ touche () {
   if [[ $# == 0 ]]; then echo "Usage: touche <file>"; return; fi
   FILE="$1"
 
-  if [[ -e $FILE ]]; then touch $FILE; return; fi
+  if [[ -e $FILE ]]; then command touch $FILE; return; fi
 
   BASENAME=$(basename $FILE)
   IFS='.' read FNAME FEXT <<<$BASENAME
 
-  if [[ ! -e ~/Templates/$FEXT.m4 ]]; then touch $FILE; return; fi
+  if [[ ! -e ~/Templates/$FEXT.m4 ]]; then command touch $FILE; return; fi
 
   ARGS=$argv[2,-1]
   FLAGS=$(echo $ARGS | sed 's/\+/--define=/g')
