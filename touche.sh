@@ -5,7 +5,7 @@
 # Put (or source) this in your .zsh_profile or whatever.
 # 
 # Usage:
-# $ touche MyClass.cpp +copy +mit
+# $ touche MyClass.cpp +gpl 
 #
 
 touche () {
