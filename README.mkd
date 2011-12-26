@@ -26,6 +26,11 @@ Usage
     $ touche myapp.py
     $ touche Widget.cpp +gpl +svn
 
+Touche doesn't empty files that already exist and instead updates access and
+modification times. It also offloads to regular `touch` if it doesn't find a
+template for the given file extension. Because of this, you can alias touch
+to touche.
+
 Writing templates
 ----------------------------------------------------------------------------
 

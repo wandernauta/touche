@@ -17,6 +17,8 @@ touche () {
   BASENAME=$(basename $FILE)
   IFS='.' read FNAME FEXT <<<$BASENAME
 
+  if [[ ! -e ~/Templates/$FEXT.m4 ]]; then touch $FILE; return; fi
+
   ARGS=$argv[2,-1]
   FLAGS=$(echo $ARGS | sed 's/\+/--define=/g')
 
